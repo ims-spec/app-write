@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { account } from "../appWrite";
 
+
+
+
+
 export const SignIn = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   const [loading, setLoading] = useState(true);
   const [session, setSession] = useState();
 

@@ -1,18 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { account, ID } from './appWrite';
+import { useStore } from './store/authStore';
 
 
 
 const App = () => {
   const [loggedInUser, setLoggedInUser] = useState(null);
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
 
-  async function login(email:string, password:string) {
-    await account.createEmailPasswordSession(email, password);
-    setLoggedInUser(await account.get());
-  }
+  const {checkAuth, } = useStore()
+  
+
+
+  useEffect(()=>{
+      
+    checkAuth()
+
+  }, [])
 
 
 
